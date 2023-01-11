@@ -10,4 +10,3 @@
     - name: "Include molecule.testing"
       ansible.builtin.include_role:
         name: "molecule.testing"
-
