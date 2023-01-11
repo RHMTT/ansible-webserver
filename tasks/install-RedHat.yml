@@ -1,5 +1,0 @@
----
-- name: "Ensure required packages are present"
-  ansible.builtin.yum:
-    name: "{{ apache_packages }}"
-    state: present
