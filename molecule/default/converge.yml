@@ -1,12 +1,12 @@
 ---
 - name: Converge
   hosts: all
+
   tasks:
-    # replace these tasks with whatever you find suitable to test
-    - name: Copy something to test use of synchronize module
-      ansible.builtin.copy:
-        src: /etc/hosts
-        dest: /tmp/hosts-from-controller
-    - name: "Include molecule.testing"
-      ansible.builtin.include_role:
-        name: "molecule.testing"
+    - name: Update apt cache (on Debian).
+      ansible.builtin.apt:
+        update_cache: true
+        cache_valid_time: 3600
+      when: ansible_os_family == 'Debian'
+
+- ansible.builtin.import_playbook: ../../main.yml
