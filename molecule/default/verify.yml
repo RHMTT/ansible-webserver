@@ -8,13 +8,13 @@
     expected_content: Managed by Ansible
 
   tasks:
-  - name: Example assertion
-    ansible.builtin.assert:
-      that: true
+    - name: Example assertion
+      ansible.builtin.assert:
+        that: true
 
-  - name: check web server is running
-    ansible.builtin.uri:
-      url: http://localhost
-      return_content: true
-    register: url_output
-    failed_when: "expected_content not in url_output.content"
+    - name: check web server is running
+      ansible.builtin.uri:
+        url: http://localhost
+        return_content: true
+      register: url_output
+      failed_when: "expected_content not in url_output.content"
