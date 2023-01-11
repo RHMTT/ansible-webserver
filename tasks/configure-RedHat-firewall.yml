@@ -1,6 +1,6 @@
 ---
 - name: "Whitelist httpd in firewalld"
-  firewalld:
+  ansible.posix.firewalld:
     service: "{{ firewall_svc }}"
     state: enabled
     permanent: true
