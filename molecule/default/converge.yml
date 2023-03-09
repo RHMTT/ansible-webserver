@@ -9,4 +9,5 @@
         cache_valid_time: 3600
       when: ansible_os_family == 'Debian'
 
-- ansible.builtin.import_playbook: ../../main.yml
+    - name: Use the main playbook
+      ansible.builtin.import_playbook: ../../main.yml
