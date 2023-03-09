@@ -3,10 +3,7 @@ dependency:
   name: galaxy
 driver:
   name: podman
-lint: |
-  set -e
-  yamllint .
-  ansible-lint
+lint: ansible-lint
 platforms:
   - name: instance
     image: "geerlingguy/docker-${MOLECULE_DISTRO:-rockylinux8}-ansible:latest"
