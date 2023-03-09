@@ -10,4 +10,4 @@
       when: ansible_os_family == 'Debian'
 
     - name: Use the main playbook
-      ansible.builtin.import_playbook: ../../main.yml
+      ansible.builtin.import_tasks: ../../main.yml
