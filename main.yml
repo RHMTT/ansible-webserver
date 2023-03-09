@@ -28,17 +28,11 @@
           <body>Hello world!</body>
           </html>
         dest: "/var/www/html/index.html"
-        mode: "0644"
-      notify: Restart apache
 
     - name: Ensure Apache is running and starts at boot.
       ansible.builtin.service:
         name: "{{ apache_service }}"
         state: started
         enabled: true
-  handlers:
-    - name: Restart apache
-      ansible.builtin.service:
-        name: "{{ apache_service }}"
-        state: restarted
+
 
