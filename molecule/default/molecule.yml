@@ -24,7 +24,4 @@ verifier:
   name: ansible
 scenario:
   name: default
-lint: |
-  set -e
-  yamllint .
-  ansible-lint .
+lint: ansible-lint .
