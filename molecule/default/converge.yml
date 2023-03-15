@@ -7,6 +7,5 @@
         src: /etc/hosts
         dest: /tmp/hosts-from-controller
 
-    - name: "Include molecule.testing"
-      ansible.builtin.include_role:
-        name: "molecule.basic_demo"
+    - name: "Include playbook"
+      ansible.builtin.include_tasks: ../main.yml
